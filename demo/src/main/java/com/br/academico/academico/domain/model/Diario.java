@@ -13,20 +13,25 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "aluno_diario")
-@EqualsAndHashCode
-@AllArgsConstructor
+@Table(name = "diario")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
+public class Diario {
 
-public class AlunoDiario {
     @Id
-    @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@EqualsAndHashCode.Include
+	private Long id;
+
     @NotBlank
-    private Aluno aluno;
-    private Integer nota_b1;
-    private Integer nota_b2;
-    private String diario;
+    private String disciplina;
+
+    @NotBlank
+    private int cargaHoraria;
+
+    @NotBlank
+    private Professor professor;
+    
 }
