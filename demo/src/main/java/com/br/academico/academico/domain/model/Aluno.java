@@ -1,9 +1,13 @@
 package com.br.academico.academico.domain.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -32,6 +36,7 @@ public class Aluno {
 	private String nome;
 	
 	@NotBlank
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="aluno_diario")
 	private String matricula;
 	
 	@NotBlank
