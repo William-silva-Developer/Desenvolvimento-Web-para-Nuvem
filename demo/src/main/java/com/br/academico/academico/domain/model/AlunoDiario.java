@@ -26,6 +26,7 @@ public class AlunoDiario {
     private Long id;
     @NotBlank
     private Aluno aluno;
-    private String notas;
+    private Integer nota_b1;
+    private Integer nota_b2;
     private String diario;
 }
