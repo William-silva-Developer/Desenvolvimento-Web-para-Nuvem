@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "professor")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-
 public class Professor {
 
     @Id

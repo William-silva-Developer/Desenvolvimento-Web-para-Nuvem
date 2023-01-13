@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,9 +31,9 @@ public class Turma {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "diario")
     @JoinColumn(name = "diario_id")
     private Long id;
-    
     @NotBlank
     private String periodo;
+    
     @NotBlank
     private String ano_civil;
 }
