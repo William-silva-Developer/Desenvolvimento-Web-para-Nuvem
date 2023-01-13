@@ -1,5 +1,6 @@
 package com.br.academico.academico.domain.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 
 import javax.persistence.Table;
@@ -8,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +30,11 @@ public class Professor {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "diario")
+    @JoinColumn(name = "diario_id")
 	private Long id;
+
 
     @NotBlank
     private String nome;
