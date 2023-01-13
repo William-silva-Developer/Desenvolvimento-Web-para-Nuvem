@@ -25,5 +25,7 @@ public class AlunoDiario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    private String matricula_aluno;
+    private Aluno aluno;
+    private String notas;
+    private String diario;
 }
