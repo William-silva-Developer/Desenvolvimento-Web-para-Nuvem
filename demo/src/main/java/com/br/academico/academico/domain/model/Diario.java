@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
@@ -13,33 +12,26 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-
 @Entity
-@Table(name = "aluno")
+@Table(name = "diario")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Aluno {
-	
+public class Diario {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
-	
-	@NotBlank
-	private String nome;
-	
-	@NotBlank
-	private String matricula;
-	
-	@NotBlank
-	@Email(message = "Este email não é válido")
-	private String email;
 
-	@NotBlank
-	private String senha;
-	
+    @NotBlank
+    private String disciplina;
 
+    @NotBlank
+    private int cargaHoraria;
+
+    @NotBlank
+    private Professor professor;
+    
 }
