@@ -20,14 +20,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+
     @NotBlank
     private String periodo;
+    
     @NotBlank
     private String ano_civil;
 }

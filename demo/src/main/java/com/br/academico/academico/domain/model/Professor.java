@@ -14,7 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-
 public class Professor {
     private String nome;
     private String matricula;
