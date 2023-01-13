@@ -31,7 +31,7 @@ public class FrequenciaDiario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "alunoDiario_id")
+    @JoinColumn(name = "aluno_diario_id")
 	private Long id;
 
     @NotBlank
