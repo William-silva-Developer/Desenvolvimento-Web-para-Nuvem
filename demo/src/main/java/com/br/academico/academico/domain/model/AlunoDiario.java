@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -29,8 +30,7 @@ public class AlunoDiario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "aluno_matricula")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy="aluno")
     private Aluno aluno;
     private Integer nota_b1;
     private Integer nota_b2;

@@ -36,7 +36,7 @@ public class Aluno {
 	private String nome;
 	
 	@NotBlank
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="aluno_diario")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="aluno_diario")
 	private String matricula;
 	
 	@NotBlank
