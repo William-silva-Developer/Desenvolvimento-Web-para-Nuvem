@@ -24,12 +24,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class FrequenciaDiario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@EqualsAndHashCode.Include
+    @EqualsAndHashCode.Include
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "aluno_diario_id")
 	private Long id;
