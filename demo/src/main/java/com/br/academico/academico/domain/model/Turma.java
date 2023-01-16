@@ -2,6 +2,7 @@ package com.br.academico.academico.domain.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,9 +29,10 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "diario")
+    @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy = "turma", fetch = FetchType.EAGER)
     @JoinColumn(name = "diario_id")
     private Long id;
+
     @NotBlank
     private String periodo;
     

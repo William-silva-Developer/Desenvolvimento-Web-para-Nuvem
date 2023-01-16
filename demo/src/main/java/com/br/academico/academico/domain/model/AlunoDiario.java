@@ -2,11 +2,11 @@ package com.br.academico.academico.domain.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -28,12 +28,23 @@ public class AlunoDiario {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    
+    @OneToMany(targetEntity = FrequenciaDiario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
     private Long id;
+
     @NotBlank
-    @OneToOne(cascade = CascadeType.ALL, mappedBy="aluno")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "matricula_aluno_fk")
     private Aluno aluno;
+
+    @NotBlank
     private Integer nota_b1;
+
+    @NotBlank
     private Integer nota_b2;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="diario")
+
+    @NotBlank
+    @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
     private Diario diario;
 }
