@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,11 +23,14 @@ import com.br.academico.academico.domain.model.Professor;
 import com.br.academico.academico.domain.repository.ProfessorRepository;
 import com.br.academico.academico.domain.service.ProfessorService;
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/professores", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProfessorController {
-
+	@Autowired(required = false)
     private ProfessorRepository professorRepor;
+	@Autowired(required = false)
 	private ProfessorService professorService;
 	
 	//LISTAR

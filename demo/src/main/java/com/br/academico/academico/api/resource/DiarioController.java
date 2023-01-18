@@ -27,9 +27,9 @@ import com.br.academico.academico.domain.service.DiarioService;
 @RequestMapping(path = "/api/v1/diarios", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DiarioController {
 
-    @Autowired
+   @Autowired(required = false)
     private DiarioRepository diarioRepor;
-    @Autowired
+	@Autowired(required = false)
     private DiarioService diarioService;
 
     //LISTAR DIARIOS

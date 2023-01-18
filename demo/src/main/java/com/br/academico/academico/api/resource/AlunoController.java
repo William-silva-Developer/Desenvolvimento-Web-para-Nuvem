@@ -23,12 +23,15 @@ import com.br.academico.academico.domain.model.Aluno;
 import com.br.academico.academico.domain.repository.AlunoRepository;
 import com.br.academico.academico.domain.service.AlunoService;
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/alunos", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AlunoController {
 
   @Autowired
   private AlunoRepository alunoRepor;
+  
   @Autowired
   private AlunoService alunoService;
 

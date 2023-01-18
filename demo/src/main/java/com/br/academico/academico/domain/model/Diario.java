@@ -27,8 +27,6 @@ public class Diario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "aluno_diario_diario")
 	private Long id;
 
     @NotBlank
