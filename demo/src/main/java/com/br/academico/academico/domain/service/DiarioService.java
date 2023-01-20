@@ -3,18 +3,19 @@ package com.br.academico.academico.domain.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.br.academico.academico.domain.model.Diario;
 import com.br.academico.academico.domain.repository.DiarioRepository;
 
+import lombok.AllArgsConstructor;
+
 
 
 @Service
+@AllArgsConstructor
 public class DiarioService {
-    @Autowired(required = false)
     private DiarioRepository diarioRepor;
 
     @Transactional

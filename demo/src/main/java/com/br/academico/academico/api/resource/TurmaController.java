@@ -23,14 +23,18 @@ import com.br.academico.academico.domain.model.Turma;
 import com.br.academico.academico.domain.repository.TurmaRepository;
 import com.br.academico.academico.domain.service.TurmaService;
 
+import lombok.AllArgsConstructor;
+
 
 
 @RestController
+@AllArgsConstructor
+
 @RequestMapping(path = "/api/v1/turmas", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TurmaController {
-	@Autowired(required = false)
-    private TurmaRepository turmaRepor;
-	@Autowired(required = false)
+
+	private TurmaRepository turmaRepor;
+
 	private TurmaService turmaService;
 	
 	

@@ -31,6 +31,8 @@ public class Aluno {
 	private Long id;
 	
 	@NotBlank
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "aluno_matricula")
 	private String matricula;
 
 	@NotBlank
