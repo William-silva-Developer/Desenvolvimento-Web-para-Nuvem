@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,14 +23,17 @@ import com.br.academico.academico.domain.model.AlunoDiario;
 import com.br.academico.academico.domain.repository.AlunoDiarioRepository;
 import com.br.academico.academico.domain.service.AlunoDiarioService;
 
+import lombok.AllArgsConstructor;
+
 
 
 @RestController
 @RequestMapping(path = "/api/v1/aluno_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
+@AllArgsConstructor
 public class AlunoDiarioController {
-	@Autowired(required = false)
+	
     private AlunoDiarioRepository alunoDiarioRepor;
-	@Autowired(required = false)
+
 	private AlunoDiarioService alunoDiarioService;
 	
 	//LISTANDO DIÁRIOS DE ALUNOS
