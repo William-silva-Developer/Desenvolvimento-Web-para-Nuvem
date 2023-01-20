@@ -28,9 +28,6 @@ public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-
-    @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy = "turma", fetch = FetchType.EAGER)
-    @JoinColumn(name = "diario_id")
     private Long id;
 
     @NotBlank

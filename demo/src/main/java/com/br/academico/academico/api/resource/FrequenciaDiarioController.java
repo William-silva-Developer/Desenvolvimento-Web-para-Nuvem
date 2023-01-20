@@ -23,13 +23,15 @@ import com.br.academico.academico.domain.model.FrequenciaDiario;
 import com.br.academico.academico.domain.repository.FrequenciaDiarioRepository;
 import com.br.academico.academico.domain.service.FrenquenciaDiarioService;
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/frequencia_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
 public class FrequenciaDiarioController {
 
-    @Autowired
+   @Autowired(required = false)
     private FrequenciaDiarioRepository frequenciaRepor;
-    @Autowired
+   @Autowired(required = false)
     private FrenquenciaDiarioService frequenciaService;
     
 

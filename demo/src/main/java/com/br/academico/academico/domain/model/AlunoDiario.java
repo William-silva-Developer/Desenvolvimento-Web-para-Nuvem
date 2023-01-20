@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "aluno_diario")
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
@@ -28,14 +28,9 @@ public class AlunoDiario {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    
-    @OneToMany(targetEntity = FrequenciaDiario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
     private Long id;
 
     @NotBlank
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "matricula_aluno_fk")
     private Aluno aluno;
 
     @NotBlank
