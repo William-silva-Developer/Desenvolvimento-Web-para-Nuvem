@@ -14,8 +14,9 @@ import com.br.academico.academico.domain.repository.ProfessorRepository;
 import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class ProfessorService {
-	@Autowired(required = false)
+	
     private ProfessorRepository professorRepor;
 	
 	@Transactional

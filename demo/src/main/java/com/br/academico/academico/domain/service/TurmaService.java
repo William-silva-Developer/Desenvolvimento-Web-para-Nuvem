@@ -13,8 +13,9 @@ import com.br.academico.academico.domain.repository.TurmaRepository;
 import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class TurmaService {
-	@Autowired(required = false)
+	
     private TurmaRepository turmaRepor;
 	
 	@Transactional
