@@ -17,20 +17,23 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+
+
+@Entity
+@Table(name = "professor")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "professor")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Professor {
 
+
+    /*
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "diario_id") */
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "diario_id")
 	private Long id;
 
 

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,15 +27,17 @@ import lombok.AllArgsConstructor;
 
 
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/alunos", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class AlunoController {
 
-  
+
   private AlunoRepository alunoRepor;
   
-  
+ 
   private AlunoService alunoService;
 
     @GetMapping  

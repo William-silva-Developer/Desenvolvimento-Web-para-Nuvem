@@ -39,7 +39,8 @@ public class AlunoDiario {
     @NotBlank
     private Integer nota_b2;
 
-    @NotBlank
+/*     @NotBlank
     @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
     private Diario diario;
+    */
 }

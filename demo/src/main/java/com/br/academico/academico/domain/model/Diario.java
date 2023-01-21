@@ -33,11 +33,11 @@ public class Diario {
     private String disciplina;
 
     @NotBlank
-    private int cargaHoraria;
-
+    private Integer cargaHoraria;
+/* 
     @NotBlank
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "professor_id")
     private Professor professor;
-    
+    */
 }

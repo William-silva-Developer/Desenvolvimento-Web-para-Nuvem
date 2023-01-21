@@ -14,11 +14,12 @@ import lombok.AllArgsConstructor;
 
 
 
+
+
 @Service
-@AllArgsConstructor
 public class AlunoService {
     
-
+    @Autowired
     private AlunoRepository alunoRepor;
 
     @Transactional
