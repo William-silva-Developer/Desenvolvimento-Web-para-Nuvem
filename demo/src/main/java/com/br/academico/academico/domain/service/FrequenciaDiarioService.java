@@ -12,9 +12,11 @@ import com.br.academico.academico.domain.repository.FrequenciaDiarioRepository;
 
 import lombok.AllArgsConstructor;
 
+
+
 @Service
 @AllArgsConstructor
-public class FrenquenciaDiarioService {
+public class FrequenciaDiarioService {
     
     private FrequenciaDiarioRepository frequenciaRepor;
 

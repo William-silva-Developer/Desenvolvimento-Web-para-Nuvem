@@ -27,13 +27,15 @@ import lombok.AllArgsConstructor;
 
 
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/aluno_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class AlunoDiarioController {
 	
     private AlunoDiarioRepository alunoDiarioRepor;
-
+	
 	private AlunoDiarioService alunoDiarioService;
 	
 	//LISTANDO DIÁRIOS DE ALUNOS

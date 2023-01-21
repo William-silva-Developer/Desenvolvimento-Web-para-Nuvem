@@ -21,9 +21,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.br.academico.academico.domain.model.FrequenciaDiario;
 import com.br.academico.academico.domain.repository.FrequenciaDiarioRepository;
-import com.br.academico.academico.domain.service.FrenquenciaDiarioService;
+import com.br.academico.academico.domain.service.FrequenciaDiarioService;
 
 import lombok.AllArgsConstructor;
+
+
 
 
 
@@ -35,7 +37,7 @@ public class FrequenciaDiarioController {
    
     private FrequenciaDiarioRepository frequenciaRepor;
    
-    private FrenquenciaDiarioService frequenciaService;
+    private FrequenciaDiarioService frequenciaService;
     
 
     //LISTAR TURMAS

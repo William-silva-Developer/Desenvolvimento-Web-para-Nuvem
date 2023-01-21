@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-
 public class AlunoDiario {
     @Id
     @EqualsAndHashCode.Include

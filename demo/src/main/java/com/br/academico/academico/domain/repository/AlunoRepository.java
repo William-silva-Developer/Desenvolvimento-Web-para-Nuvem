@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.br.academico.academico.domain.model.Aluno;
 
-@Repository("mysql")
+@Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Long> {
     
 }
