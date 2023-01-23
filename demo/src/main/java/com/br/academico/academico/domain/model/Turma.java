@@ -1,11 +1,11 @@
 package com.br.academico.academico.domain.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -32,6 +32,6 @@ public class Turma {
     private String periodo;
     
     @NotBlank
-    @JoinColumn(name = "ano_civil")
+    @Column(name = "ano_civil")
     private String anoCivil;
 }
