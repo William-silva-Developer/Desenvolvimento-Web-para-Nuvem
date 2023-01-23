@@ -2,8 +2,6 @@ package com.br.academico.academico.domain.service;
 
 import java.util.List;
 import java.util.Optional;
-
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,13 +10,11 @@ import com.br.academico.academico.domain.repository.AlunoDiarioRepository;
 
 import lombok.AllArgsConstructor;
 
-
-
 @Service
 @AllArgsConstructor
 public class AlunoDiarioService {
 	
-    private AlunoDiarioRepository alunoDiarioRepor;
+	private AlunoDiarioRepository alunoDiarioRepor;
 	
 	@Transactional
 	public List<AlunoDiario> toList(){
@@ -40,4 +36,5 @@ public class AlunoDiarioService {
 	public void toDelete(Long id) {
 		alunoDiarioRepor.deleteById(id);
 	};
+
 }

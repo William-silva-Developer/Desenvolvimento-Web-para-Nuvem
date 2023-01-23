@@ -25,12 +25,14 @@ import com.br.academico.academico.domain.service.DiarioService;
 
 import lombok.AllArgsConstructor;
 
+
+
 @RestController
 @RequestMapping(path = "/api/v1/diarios", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class DiarioController {
 
-
+	
     private DiarioRepository diarioRepor;
 	
     private DiarioService diarioService;
