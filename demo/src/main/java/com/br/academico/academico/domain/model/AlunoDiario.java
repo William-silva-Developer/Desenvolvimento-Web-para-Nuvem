@@ -1,11 +1,11 @@
 package com.br.academico.academico.domain.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -30,11 +30,11 @@ public class AlunoDiario {
     private Aluno aluno; */
 
     @NotBlank
-    @JoinColumn(name = "Bimestre-01")
+    @Column(name = "Bimestre-01")
     private Integer notaBimestre1;
 
     @NotBlank
-    @JoinColumn(name = "Bimestre-02")
+    @Column(name = "Bimestre-02")
     private Integer notaBimestre2;
 
 /*     @NotBlank
