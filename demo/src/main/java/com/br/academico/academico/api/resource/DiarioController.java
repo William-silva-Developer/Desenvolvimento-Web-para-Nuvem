@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +21,13 @@ import com.br.academico.academico.domain.model.Diario;
 import com.br.academico.academico.domain.repository.DiarioRepository;
 import com.br.academico.academico.domain.service.DiarioService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 
-@RequestMapping(path = "/api/v1/diarios", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/api/v1/diarios")
 public class DiarioController {
 
     private DiarioRepository diarioRepor;

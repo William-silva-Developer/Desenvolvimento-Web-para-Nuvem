@@ -9,12 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.br.academico.academico.domain.model.Turma;
 import com.br.academico.academico.domain.repository.TurmaRepository;
 
-import lombok.AllArgsConstructor;
-
 
 @Service
-@AllArgsConstructor
-
 public class TurmaService {
     private TurmaRepository turmaRepor;
 	

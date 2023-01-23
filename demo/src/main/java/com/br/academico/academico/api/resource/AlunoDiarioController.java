@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.springframework.http.MediaType;
+//import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,14 +22,15 @@ import com.br.academico.academico.domain.model.AlunoDiario;
 import com.br.academico.academico.domain.repository.AlunoDiarioRepository;
 import com.br.academico.academico.domain.service.AlunoDiarioService;
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 
 
 @RestController
-@AllArgsConstructor
-
-@RequestMapping(path = "/api/v1/aluno_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
+//@AllArgsConstructor
+@RequiredArgsConstructor
+@RequestMapping("/api/v1/aluno_diarios")
 public class AlunoDiarioController {
 
     private AlunoDiarioRepository alunoDiarioRepor;

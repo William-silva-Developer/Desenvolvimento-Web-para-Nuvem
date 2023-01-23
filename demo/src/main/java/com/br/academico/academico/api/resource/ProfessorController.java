@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,14 +21,14 @@ import com.br.academico.academico.domain.model.Professor;
 import com.br.academico.academico.domain.repository.ProfessorRepository;
 import com.br.academico.academico.domain.service.ProfessorService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 
-@RequestMapping(path = "/api/v1/professores", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/api/v1/professores")
 public class ProfessorController {
 
     private ProfessorRepository professorRepor;

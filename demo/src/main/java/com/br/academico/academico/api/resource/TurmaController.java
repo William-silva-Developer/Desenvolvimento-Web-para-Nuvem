@@ -5,9 +5,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,14 +20,13 @@ import com.br.academico.academico.domain.model.Turma;
 import com.br.academico.academico.domain.repository.TurmaRepository;
 import com.br.academico.academico.domain.service.TurmaService;
 
-import lombok.AllArgsConstructor;
-
+import lombok.RequiredArgsConstructor;
 
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 
-@RequestMapping(path = "/api/v1/turmas", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/api/v1/turmas")
 public class TurmaController {
 
 	private TurmaRepository turmaRepor;

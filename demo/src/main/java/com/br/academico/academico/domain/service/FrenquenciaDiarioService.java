@@ -9,12 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.br.academico.academico.domain.model.FrequenciaDiario;
 import com.br.academico.academico.domain.repository.FrequenciaDiarioRepository;
 
-import lombok.AllArgsConstructor;
-
 
 @Service
-@AllArgsConstructor
-
 public class FrenquenciaDiarioService {
     private FrequenciaDiarioRepository frequenciaRepor;
 
