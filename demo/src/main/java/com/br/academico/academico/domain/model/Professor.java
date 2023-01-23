@@ -1,15 +1,12 @@
 package com.br.academico.academico.domain.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,20 +14,23 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+
+
+@Entity
+@Table(name = "professor")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "professor")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Professor {
 
+
+    /*
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "diario_id") */
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "diario_id")
 	private Long id;
 
 

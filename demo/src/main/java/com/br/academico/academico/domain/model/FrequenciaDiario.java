@@ -1,15 +1,11 @@
 package com.br.academico.academico.domain.model;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -31,16 +27,17 @@ public class FrequenciaDiario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
 	private Long id;
-
+/* 
     @NotBlank
     @ManyToOne(targetEntity = AlunoDiario.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "aluno_diario_id")
+    */
     private String matriculaAluno;
     
     @NotBlank
-    private int numeroFaltas;
+    private Integer numeroFaltas;
 
     @NotBlank
-    private Date date;
+    private OffsetDateTime date;
     
 }

@@ -11,12 +11,11 @@ import com.br.academico.academico.domain.repository.TurmaRepository;
 
 import lombok.AllArgsConstructor;
 
-
 @Service
 @AllArgsConstructor
-
 public class TurmaService {
-    private TurmaRepository turmaRepor;
+	
+	private TurmaRepository turmaRepor;
 	
 	@Transactional
 	public List<Turma> toList(){
@@ -37,5 +36,5 @@ public class TurmaService {
 	public void toDelete(Long id) {
 		turmaRepor.deleteById(id);
 	};
-    
+
 }

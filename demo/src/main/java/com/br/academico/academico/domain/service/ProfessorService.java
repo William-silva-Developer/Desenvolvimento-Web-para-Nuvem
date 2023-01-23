@@ -11,14 +11,11 @@ import com.br.academico.academico.domain.repository.ProfessorRepository;
 
 import lombok.AllArgsConstructor;
 
-
-
-
 @Service
 @AllArgsConstructor
-
 public class ProfessorService {
-    private ProfessorRepository professorRepor;
+	
+	private ProfessorRepository professorRepor;
 	
 	@Transactional
 	public List<Professor> toList(){
@@ -39,5 +36,6 @@ public class ProfessorService {
 	public void toDelete(Long id) {
 		 professorRepor.deleteById(id);
 	}
-    
+	
+
 }

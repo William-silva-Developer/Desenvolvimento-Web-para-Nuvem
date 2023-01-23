@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,14 +27,14 @@ import lombok.AllArgsConstructor;
 
 
 
+
 @RestController
-@AllArgsConstructor
-
 @RequestMapping(path = "/api/v1/professores", produces = MediaType.APPLICATION_JSON_VALUE)
+@AllArgsConstructor
 public class ProfessorController {
-
+	
     private ProfessorRepository professorRepor;
-
+	
 	private ProfessorService professorService;
 	
 	//LISTAR

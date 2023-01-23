@@ -11,32 +11,33 @@ import com.br.academico.academico.domain.repository.AlunoRepository;
 
 import lombok.AllArgsConstructor;
 
-
-
 @Service
 @AllArgsConstructor
 public class AlunoService {
-    
-    private AlunoRepository alunoRepor;
+	
+	private AlunoRepository alunoRepor;
+	
+	
+	@Transactional
+	public List<Aluno> toList(){
+		return alunoRepor.findAll();
+	};
+	
+	@Transactional
+	public Optional<Aluno> toSearch( Long id) {
+		return alunoRepor.findById(id);
+	};
+	
+	@Transactional
+	public Aluno toSave( Aluno aluno ) {
+		return alunoRepor.save(aluno);
+	};
+	
+	@Transactional
+	public void toDelete(Long id) {
+		alunoRepor.deleteById(id);
+	}
+	
+	
 
-    @Transactional
-    public List<Aluno> toList(){
-        return alunoRepor.findAll();
-    };
-
-    @Transactional
-    public Optional<Aluno> toSearch(Long id){
-        return alunoRepor.findById(id);
-    };
-
-    @Transactional
-    public Aluno toSave(Aluno aluno){
-        return alunoRepor.save(aluno);
-    };
-
-    @Transactional
-    public void toDelete(Long id){
-        alunoRepor.deleteById(id);
-    }
-    
 }
