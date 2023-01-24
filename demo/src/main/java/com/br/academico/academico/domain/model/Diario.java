@@ -1,6 +1,7 @@
 package com.br.academico.academico.domain.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Diario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
+    @Column(name = "cod_diario")
 	private Long id;
 
     @NotBlank
@@ -31,10 +33,5 @@ public class Diario {
 
     @NotBlank
     private Integer cargaHoraria;
-/* 
-    @NotBlank
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "professor_id")
-    private Professor professor;
-    */
+
 }
