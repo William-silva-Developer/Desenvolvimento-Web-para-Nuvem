@@ -9,10 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.br.academico.academico.domain.model.Diario;
 import com.br.academico.academico.domain.repository.DiarioRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DiarioService {
 	
 	private DiarioRepository diarioRepor;

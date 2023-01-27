@@ -23,7 +23,7 @@ import com.br.academico.academico.domain.model.AlunoDiario;
 import com.br.academico.academico.domain.repository.AlunoDiarioRepository;
 import com.br.academico.academico.domain.service.AlunoDiarioService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 
 
@@ -31,7 +31,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping(path = "/api/v1/aluno_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AlunoDiarioController {
 	
     private AlunoDiarioRepository alunoDiarioRepor;

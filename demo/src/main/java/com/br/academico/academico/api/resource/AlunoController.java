@@ -23,7 +23,7 @@ import com.br.academico.academico.domain.model.Aluno;
 import com.br.academico.academico.domain.repository.AlunoRepository;
 import com.br.academico.academico.domain.service.AlunoService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 
 
@@ -31,9 +31,10 @@ import lombok.AllArgsConstructor;
 
 
 
-@RestController
+
 @RequestMapping(path = "/api/v1/alunos", produces = MediaType.APPLICATION_JSON_VALUE)
-@AllArgsConstructor
+@RequiredArgsConstructor
+@RestController
 public class AlunoController {
 
   

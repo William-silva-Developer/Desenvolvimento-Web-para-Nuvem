@@ -23,14 +23,14 @@ import com.br.academico.academico.domain.model.Professor;
 import com.br.academico.academico.domain.repository.ProfessorRepository;
 import com.br.academico.academico.domain.service.ProfessorService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 
 
 
 @RestController
 @RequestMapping(path = "/api/v1/professores", produces = MediaType.APPLICATION_JSON_VALUE)
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProfessorController {
 	
     private ProfessorRepository professorRepor;

@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.br.academico.academico.domain.model.Aluno;
 import com.br.academico.academico.domain.repository.AlunoRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AlunoService {
 	
 	private AlunoRepository alunoRepor;

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.7</version>
+		<version>2.7.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.br.academico</groupId>
@@ -51,11 +51,26 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+  			  <groupId>org.hibernate</groupId>
+   			  <artifactId>hibernate-core</artifactId>
+    		  <version>5.4.24.Final</version>
+			</dependency>
+			<dependency> 
+                      <groupId>org.hibernate</groupId> 
+                      <artifactId>hibernate-entitymanager</artifactId> 
+                      <version>5.6.14.Final</version> 
+</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>	
 	</dependencies>
+	<dependency>
+    <groupId>javax.xml.bind</groupId>
+   	 <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
 
 	<build>
 		<plugins>
@@ -64,10 +79,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
+						
 					</excludes>
 				</configuration>
 			</plugin>

@@ -23,13 +23,15 @@ import com.br.academico.academico.domain.model.Diario;
 import com.br.academico.academico.domain.repository.DiarioRepository;
 import com.br.academico.academico.domain.service.DiarioService;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 
 
 @RestController
+@RequiredArgsConstructor
+
 @RequestMapping(path = "/api/v1/diarios", produces = MediaType.APPLICATION_JSON_VALUE)
-@AllArgsConstructor
 public class DiarioController {
 
 	

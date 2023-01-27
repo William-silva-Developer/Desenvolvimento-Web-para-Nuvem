@@ -1,10 +1,15 @@
 package com.br.academico.academico.domain.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -24,17 +29,22 @@ public class Diario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
+
+    @ManyToOne(targetEntity = Turma.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "diario_id")
 	private Long id;
 
     @NotBlank
+    @ManyToOne(targetEntity = AlunoDiario.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "aluno_diario_fk")
     private String disciplina;
 
     @NotBlank
-    private Integer cargaHoraria;
-/* 
+    private int cargaHoraria;
+ 
     @NotBlank
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "professor_id")
     private Professor professor;
-    */
+    
 }
