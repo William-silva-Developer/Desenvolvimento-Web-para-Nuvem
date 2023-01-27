@@ -23,7 +23,7 @@ import com.br.academico.academico.domain.model.FrequenciaDiario;
 import com.br.academico.academico.domain.repository.FrequenciaDiarioRepository;
 import com.br.academico.academico.domain.service.FrequenciaDiarioService;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 
 
@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping(path = "/api/v1/frequencia_diarios", produces = MediaType.APPLICATION_JSON_VALUE)
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class FrequenciaDiarioController {
 
    

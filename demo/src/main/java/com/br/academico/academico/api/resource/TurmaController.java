@@ -23,7 +23,7 @@ import com.br.academico.academico.domain.model.Turma;
 import com.br.academico.academico.domain.repository.TurmaRepository;
 import com.br.academico.academico.domain.service.TurmaService;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 
 
@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping(path = "/api/v1/turmas", produces = MediaType.APPLICATION_JSON_VALUE)
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class TurmaController {
 
     private TurmaRepository turmaRepor;
