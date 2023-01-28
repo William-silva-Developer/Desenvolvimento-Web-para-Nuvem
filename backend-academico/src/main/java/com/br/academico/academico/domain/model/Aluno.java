@@ -43,7 +43,7 @@ public class Aluno {
 
 	
 	@NotBlank(message = "Senha do Aluno deve ser preenchida")
-    @Size(min = 6, max = 10, message = "Senha do aluno deve ter entre 6 e 20 caracteres")
+    @Size(min = 6, message = "Senha do aluno deve ter no mínimo 6 caracteres")
 	private String senha;
 
 	
