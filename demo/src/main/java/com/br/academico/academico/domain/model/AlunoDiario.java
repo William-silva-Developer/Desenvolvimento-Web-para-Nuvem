@@ -1,11 +1,14 @@
 package com.br.academico.academico.domain.model;
 
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -17,28 +20,31 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "aluno_diario")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class AlunoDiario {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cod_aluno_diario")
     private Long id;
-
-   /* @NotBlank
-    private Aluno aluno; */
-
+  
     @NotBlank
-    @Column(name = "Bimestre-01")
+    @Column(name = "Bimestre_01")
     private Integer notaBimestre1;
 
     @NotBlank
-    @Column(name = "Bimestre-02")
+    @Column(name = "Bimestre_02")
     private Integer notaBimestre2;
 
 /*     @NotBlank
     @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
     private Diario diario;
     */
+    @NotBlank
+    @OneToOne
+    @JoinColumn(name = "aluno_id", referencedColumnName = "cod_aluno")
+    private Aluno aluno; 
+
 }

@@ -54,7 +54,7 @@ public class Professor {
     private String formacao;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cod_diario")
+    @JoinColumn(name = "diario_id")
     private Diario diario;
 
 
