@@ -1,13 +1,13 @@
 package com.br.academico.academico.domain.model;
 
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -30,21 +30,22 @@ public class AlunoDiario {
     @Column(name = "cod_aluno_diario")
     private Long id;
   
-    @NotBlank
+    @NotBlank(message = "Insira uma nota")
     @Column(name = "Bimestre_01")
     private Integer notaBimestre1;
 
-    @NotBlank
+    @NotBlank(message = "Insira uma nota")
     @Column(name = "Bimestre_02")
     private Integer notaBimestre2;
 
-/*     @NotBlank
-    @OneToMany(targetEntity = Diario.class, cascade = CascadeType.ALL, mappedBy="aluno_diario", fetch = FetchType.EAGER)
-    private Diario diario;
-    */
+
     @NotBlank
     @OneToOne
     @JoinColumn(name = "aluno_id", referencedColumnName = "cod_aluno")
     private Aluno aluno; 
-
+/* 
+    @OneToMany
+    @JoinColumn(name = "frequencia_id")
+    private FrequenciaDiario frequencia;
+*/
 }

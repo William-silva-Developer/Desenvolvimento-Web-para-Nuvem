@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,13 +34,16 @@ public class Aluno {
 	private String matricula;
 
 	@NotBlank
+	@Size(max = 150)
 	private String nome;
 	
 	@NotBlank
 	@Email(message = "Este email não é válido")
 	private String email;
 
-	@NotBlank
+	
+	@NotBlank(message = "Senha do Aluno deve ser preenchida")
+    @Size(min = 6, max = 10, message = "Senha do aluno deve ter entre 6 e 20 caracteres")
 	private String senha;
 
 	

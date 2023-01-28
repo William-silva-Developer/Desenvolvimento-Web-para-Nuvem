@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,10 +31,13 @@ public class Diario {
     @Column(name = "cod_diario")
 	private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Informe a disciplina.")
+    @Size(max = 100)
     private String disciplina;
 
     @NotBlank
+    @Size(max = 8)
+    @Column(name = "carga_horaria")
     private Integer cargaHoraria;
 
     @ManyToOne
