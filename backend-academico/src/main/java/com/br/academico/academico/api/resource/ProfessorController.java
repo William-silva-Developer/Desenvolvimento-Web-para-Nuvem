@@ -29,7 +29,7 @@ import lombok.AllArgsConstructor;
 
 
 @RestController
-@RequestMapping(path = "/api/v1/professores", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/api/v1/professores")
 @AllArgsConstructor
 public class ProfessorController {
 	
