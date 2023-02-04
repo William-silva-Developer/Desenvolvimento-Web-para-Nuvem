@@ -1,6 +1,6 @@
 package com.br.academico.academico.domain.model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -58,7 +58,7 @@ public class Professor {
     @Size(max = 120)
     private String formacao;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "diario_id")
     private Diario diario;
 

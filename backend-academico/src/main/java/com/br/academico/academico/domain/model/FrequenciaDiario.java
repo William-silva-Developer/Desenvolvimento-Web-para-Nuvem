@@ -1,16 +1,16 @@
 package com.br.academico.academico.domain.model;
 
 import java.time.OffsetDateTime;
-import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -36,11 +36,12 @@ public class FrequenciaDiario {
     @EqualsAndHashCode.Include
     @Column(name = "cod_frequencia")
 	private Long id;
-/* 
+ 
     @NotBlank
     @ManyToOne(targetEntity = AlunoDiario.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "aluno_diario_id")
-    */
+    private AlunoDiario alunoDiario;
+    
     
 
     @NotBlank(message = "A matricula não poder ser nula.")
