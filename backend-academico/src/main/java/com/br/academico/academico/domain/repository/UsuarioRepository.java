@@ -1,31 +1,18 @@
 package com.br.academico.academico.domain.repository;
 
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-
 
 import com.br.academico.academico.domain.model.*;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
-	Usuario findByLogin(String login);
-	Usuario findBySenha(String senha);	
+public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
 	
+	Optional<Usuario> findByNome(String nome);
 
 }
-
-
-
-
-
-
-
-
-
-
 

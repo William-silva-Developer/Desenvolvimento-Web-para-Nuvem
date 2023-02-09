@@ -1,103 +1,169 @@
 package com.br.academico.academico.domain.model;
 
+
+import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
 
-
-import javax.persistence.Embedded;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
 
 @Entity
 @Table(name = "usuario")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Usuario{
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Long cod_usuario;
-    
-    @NotBlank(message = "O campo login deve ser preenchido")
-    private String login;
+public class Usuario implements UserDetails, Serializable {
+	
+	
+	 	
+	  
+	
+	private static final long serialVersionUID = 1L;
 
-
-    @NotBlank(message = "O campo nome deve ser preenchido")
-    @Size(min = 3, max = 100)
-    private String nome;
-    
-    @NotBlank(message = "O campo matricula deve ser preenchido")
-    @Size(min = 4, max = 20)
-    private String matricula;
-
-    @NotBlank(message = "Digite uma senha")
-    @Size(min = 4, max = 8)
-    private String senha;
-    
-    @Embedded
-    @NotBlank(message = "O campo perfil deve ser preenchido")
-    private Perfil perfil;
+		@Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    private UUID cod_usuario;
+	  
+	 	@Column(nullable = false, unique = true)
+	    private String nome;
+	 	
+	 	@Column(nullable = false)
+	 	private String sobre_nome;
+	    
+	    @Column(nullable = false)
+	    private String senha;
+	    
+	    
+	  
+	    @ManyToMany
+	    @JoinTable(name = "tb_usuario_role",
+        joinColumns = @JoinColumn(name = "usuario_cod"),
+        inverseJoinColumns = @JoinColumn(name = "role_cod"))
+	    private List<Role> roles;
 
 
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public Perfil getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(Perfil perfil) {
-        this.perfil = perfil;
-    }
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			// TODO Auto-generated method stub
+			return this.roles;
+		}
 
 
-   
 
-    
+		@Override
+		public String getPassword() {
+			// TODO Auto-generated method stub
+			return this.senha;
+		}
+
+
+
+		@Override
+		public String getUsername() {
+			// TODO Auto-generated method stub
+			return this.nome;
+		}
+
+
+
+		@Override
+		public boolean isAccountNonExpired() {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+
+
+		@Override
+		public boolean isAccountNonLocked() {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+
+
+		@Override
+		public boolean isCredentialsNonExpired() {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+
+
+		@Override
+		public boolean isEnabled() {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+
+
+		public UUID getCod_usuario() {
+			return cod_usuario;
+		}
+
+
+
+		public void setCod_usuario(UUID cod_usuario) {
+			this.cod_usuario = cod_usuario;
+		}
+		
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+		
+		public void setSenha(String senha) {
+			this.senha = senha;
+		}
+
+/*
+
+		public String getNome() {
+			return nome;
+		}
+
+*/
+
+		
+
+
+/*
+		public String getSenha() {
+			return senha;
+		}
+
+*/
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+					  
+
+
 }
+

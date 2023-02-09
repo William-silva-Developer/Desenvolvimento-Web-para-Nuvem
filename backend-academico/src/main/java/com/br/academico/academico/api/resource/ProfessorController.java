@@ -47,7 +47,7 @@ public class ProfessorController {
 		@ApiResponse(code = 500, message = "Foi gerada uma exception")
 	})
 	
-	//LISTAR
+
 	
 	@GetMapping
 	public List<Professor> list(){

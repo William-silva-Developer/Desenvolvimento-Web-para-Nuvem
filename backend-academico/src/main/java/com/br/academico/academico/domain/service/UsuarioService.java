@@ -1,41 +1,29 @@
 package com.br.academico.academico.domain.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import lombok.AllArgsConstructor;
-
-
-
 import com.br.academico.academico.domain.model.*;
+
 import com.br.academico.academico.domain.repository.*;
 
 @Service
-@AllArgsConstructor
 public class UsuarioService {
-
-    private UsuarioRepository usuarioRepor;
-
-    @Transactional
-    public Usuario findByLogin(String login, String senha) {
-        
-        Usuario usuario = new Usuario();
-        usuario.setLogin(login);
-        usuario.setSenha(senha);
-        if(usuario.equals(usuarioRepor.findByLogin(login)) & usuario.equals(usuarioRepor.findBySenha(senha))){
-
-            return usuario;
-
-        }else{}
-
-       return null;
-		
+	
+	@Autowired
+	private UsuarioRepository userRepor;
+	
+	@Transactional
+	public List<Usuario> toList(){
+		return userRepor.findAll();
 	};
-    @Transactional
-    public Usuario toSave(Usuario usuario){
+	
+	@Transactional
+	public Usuario toSave (Usuario user) {
+		return userRepor.save(user);
+	}
 
-        return usuarioRepor.save(usuario);
-
-    };
-    
 }
