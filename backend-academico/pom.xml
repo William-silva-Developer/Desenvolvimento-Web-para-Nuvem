@@ -28,7 +28,6 @@
 			<artifactId>spring-boot-starter-security</artifactId>
     	</dependency>
 
-
 <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
 		 <!-- Swagger -->
        <dependency>

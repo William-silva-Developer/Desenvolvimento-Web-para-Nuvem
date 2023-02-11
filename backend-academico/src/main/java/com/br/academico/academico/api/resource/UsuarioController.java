@@ -2,14 +2,16 @@ package com.br.academico.academico.api.resource;
 
 import java.net.URI;
 import java.util.List;
-
+import java.util.UUID;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +47,19 @@ public class UsuarioController {
 		response.setHeader("Location", uri.toASCIIString());
 		
 		return ResponseEntity.created(uri).body(usuarioServlet);
+	};
+
+
+	@PutMapping(path = "/{id}")
+	public ResponseEntity<Usuario> update(@PathVariable UUID id,  @RequestBody Usuario usuario){
+		
+		if(!usuarioRepository.existsById(id)) {
+			return ResponseEntity.notFound().build();
+		}
+		usuario.setCod_usuario(id);
+		usuario = usuarioService.toSave(usuario);
+		return ResponseEntity.ok(usuario);
+		
 	};
 
 }

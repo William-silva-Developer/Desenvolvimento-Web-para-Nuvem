@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 public class AlunoDiario {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "cod_aluno_diario")
     private Long id;
   
