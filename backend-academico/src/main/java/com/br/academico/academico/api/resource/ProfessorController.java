@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 
-import org.springframework.http.MediaType;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,21 +23,31 @@ import com.br.academico.academico.domain.model.Professor;
 import com.br.academico.academico.domain.repository.ProfessorRepository;
 import com.br.academico.academico.domain.service.ProfessorService;
 
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
 
 
 
 
 @RestController
-@RequestMapping("/api/v1/professores")
+@RequestMapping(path = "/api/v1/professores")
 @AllArgsConstructor
 public class ProfessorController {
 	
     private ProfessorRepository professorRepor;
 	
 	private ProfessorService professorService;
+
+
+	@ApiResponses(value = {
+		@ApiResponse(code = 200, message = "Sucesso"),
+		@ApiResponse(code = 201, message = "Foi criado um objeto"),
+		@ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
+		@ApiResponse(code = 500, message = "Foi gerada uma exception")
+	})
 	
-	//LISTAR
+
 	
 	@GetMapping
 	public List<Professor> list(){
